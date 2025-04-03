@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "greenbox"
+version = "0.1.0"
+description = "Raspberry Pi IoT device for plant growing environment monitoring and control"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Home Automation",
+]
+dependencies = [
+    "RPi.GPIO>=0.7.0",
+    "adafruit-circuitpython-dht>=3.7.0",
+    "schedule>=1.1.0",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+]
+
+[project.scripts]
+greenbox = "greenbox.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+
+[tool.black]
+line-length = 88
+target-version = ["py37", "py38", "py39", "py310"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 88

@@ -1,0 +1,5 @@
+# Core dependencies
+RPi.GPIO>=0.7.0
+adafruit-circuitpython-dht>=3.7.0
+schedule>=1.1.0
+PyYAML>=6.0

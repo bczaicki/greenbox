@@ -1,0 +1,44 @@
+# GreenBox Configuration Example
+
+# Sensor Settings
+sensors:
+  temperature:
+    pin: 4
+    type: "DHT22"
+  humidity:
+    pin: 4
+    type: "DHT22"
+  moisture:
+    pin: 17
+    type: "analog"
+  light:
+    pin: 18
+    type: "analog"
+
+# Control Pins
+controls:
+  water_pump:
+    pin: 23
+    active_low: false
+  fan:
+    pin: 24
+    active_low: false
+  grow_light:
+    pin: 25
+    active_low: false
+
+# Environment Settings
+environment:
+  max_temp: 30         # Maximum temperature in Celsius
+  min_temp: 18         # Minimum temperature in Celsius
+  max_humidity: 80     # Maximum humidity percentage
+  min_humidity: 40     # Minimum humidity percentage
+  min_moisture: 30     # Minimum soil moisture percentage
+  light_hours: 16      # Hours of light per day
+  light_start: "06:00" # When to turn on grow lights
+
+# System Settings
+system:
+  cycle_interval: 60   # Seconds between monitoring cycles
+  log_level: "INFO"    # Logging level (DEBUG, INFO, WARNING, ERROR)
+  data_dir: "data"     # Directory to store data
