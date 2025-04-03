@@ -29,8 +29,8 @@ class TemperatureSensor(BaseSensor):
         try:
             # In a real implementation, this would read from hardware
             # Using mock data for development
-            temp = 20 + random.uniform(-2, 2)  # Simulate temperature around 20°C
-            logger.debug(f"Temperature reading: {temp:.1f}°C")
+            temp = 20 + random.uniform(-2, 2)  # Simulate temperature around 20Â°C
+            logger.debug(f"Temperature reading: {temp:.1f}Â°C")
             return temp
         except Exception as e:
             logger.error(f"Error reading temperature sensor: {e}")

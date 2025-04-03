@@ -50,14 +50,14 @@ class GreenBoxController:
         temp = self.temp_sensor.read()
         humidity = self.humidity_sensor.read()
         
-        logger.debug(f"Sensor readings - Temp: {temp}°C, Humidity: {humidity}%")
+        logger.debug(f"Sensor readings - Temp: {temp}Â°C, Humidity: {humidity}%")
         
         # Process scheduled tasks
         self.scheduler.process_due_tasks()
         
         # Implement control logic based on sensor data
         if temp > self.config.get("max_temp", 30):
-            logger.info(f"Temperature too high: {temp}°C")
+            logger.info(f"Temperature too high: {temp}Â°C")
             # Add cooling logic here
         
         if humidity < self.config.get("min_humidity", 40):

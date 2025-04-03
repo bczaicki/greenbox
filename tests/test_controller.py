@@ -93,7 +93,7 @@ class TestGreenBoxController(unittest.TestCase):
             self.controller._process_cycle()
             
             # Check for alert log messages
-            self.assertTrue(any('Temperature too high: 35.0°C' in msg for msg in cm.output))
+            self.assertTrue(any('Temperature too high: 35.0Â°C' in msg for msg in cm.output))
             self.assertTrue(any('Humidity too low: 30.0%' in msg for msg in cm.output))
 
 

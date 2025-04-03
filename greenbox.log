@@ -1,0 +1,6 @@
+2025-04-02 22:16:30,308 - root - ERROR - Error loading config file: [Errno 2] No such file or directory: 'config.yaml'
+2025-04-02 22:16:30,308 - src.scheduler - INFO - Scheduler initialized
+2025-04-02 22:16:30,308 - src.controller - INFO - GreenBox controller initialized
+2025-04-02 22:16:30,308 - src.controller - INFO - Starting GreenBox controller
+2025-04-02 22:16:38,029 - src.controller - INFO - Controller stopped by user
+2025-04-02 22:16:38,029 - src.controller - INFO - GreenBox controller stopped
