@@ -1,9 +1,26 @@
 """
-GreenBox - Raspberry Pi IoT device for plant growing environment monitoring and control.
+GreenBox - Raspberry Pi IoT device for plant growing environment monitoring and
+control.
 """
 
-from .controller import GreenBoxController
-from .sensors import TemperatureSensor, HumiditySensor, MoistureSensor, LightSensor
-from .scheduler import Scheduler, Task
+__version__ = "0.1.0"
 
-__version__ = '0.1.0'
+# These imports are exposed as part of the public API
+__all__ = [
+    "GreenBoxController",
+    "Scheduler",
+    "Task",
+    "HumiditySensor",
+    "LightSensor",
+    "MoistureSensor",
+    "TemperatureSensor",
+]
+
+from .controller import GreenBoxController
+from .scheduler import Scheduler, Task
+from .sensors import (
+    HumiditySensor,
+    LightSensor,
+    MoistureSensor,
+    TemperatureSensor,
+)

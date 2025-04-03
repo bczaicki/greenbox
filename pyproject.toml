@@ -16,7 +16,7 @@ classifiers = [
 packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
-python = ">=3.8.1"
+python = ">=3.9"
 adafruit-circuitpython-dht = ">=3.7.0"
 schedule = ">=1.1.0"
 PyYAML = ">=6.0"
@@ -30,6 +30,7 @@ pytest-cov = ">=4.0.0"
 black = ">=23.0.0"
 isort = ">=5.12.0"
 flake8 = ">=6.0.0"
+poethepoet = "^0.33.1"
 
 [tool.poetry.scripts]
 greenbox = "src.cli:main"
@@ -45,10 +46,23 @@ python_classes = "Test*"
 python_functions = "test_*"
 
 [tool.black]
-line-length = 88
+line-length = 79
 target-version = ["py37", "py38", "py39", "py310"]
 include = '\.pyi?$'
 
 [tool.isort]
 profile = "black"
-line_length = 88
+line_length = 79
+
+[tool.poe.tasks]
+lint = [
+    { cmd = "black src tests" },
+    { cmd = "isort src tests" },
+    { cmd = "flake8 src tests" }
+]
+test = "pytest tests"
+coverage = "pytest --cov=src tests/"
+format = [
+    { cmd = "black src tests" },
+    { cmd = "isort src tests" }
+]
